@@ -1,5 +1,5 @@
 //importing Schema constructor and model function
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 // UserSchema below
 const UserSchema = new Schema({
