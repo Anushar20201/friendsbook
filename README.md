@@ -20,9 +20,12 @@ SO THAT my website can handle large amounts of unstructured data
 
 ### Git-link
 
-This can be accessible at :
+This can be accessible at : https://github.com/Anushar20201/friendsbook 
 
+### Video-link
+https://watch.screencastify.com/v/df0Wj6FllOFeDhkvCTDr 
 
+### Screenshot
 
 ### Designed with ❤️ by
 - Anusha
