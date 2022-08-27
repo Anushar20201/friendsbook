@@ -5,7 +5,7 @@ const userController = {
   // getting all users
   getAllUsers(req, res) {
     User.find({})
-    //We want to get the full document form of an objectID in a different document.
+      //We want to get the full document form of an objectID in a different document.
       .populate({
         // The .populate() method should contain an object with the property of path, which refers to the field that should be populated.
         path: 'thoughts',
@@ -59,7 +59,7 @@ const userController = {
     User.findOneAndUpdate({ _id: params.id }, body, { new: true })
       .then(dbUserData => {
         if (!dbUserData) {
-          res.status(404).json({ message:  'Sorry no user found' });
+          res.status(404).json({ message: 'Sorry no user found' });
           return;
         }
         res.json(dbUserData);
@@ -72,10 +72,10 @@ const userController = {
     User.findOneAndDelete({ _id: params.id }, { new: true })
       .then(dbUserData => {
         if (!dbUserData) {
-          res.status(404).json({ message:  'Sorry no user found' });
+          res.status(404).json({ message: 'Sorry no user found' });
           return;
         }
-        res.json(dbUserData);
+        res.json(true);
       })
       .catch(err => res.status(400).json(err));
   },
@@ -85,12 +85,12 @@ const userController = {
   //Adding a new Friend
   addFriend({ params }, res) {
     //push is update operator, if u want to avoid duplicates- then use addToSet operator in place of $push
-    User.findOneAndUpdate({ _id: params.id },{ $push: { friends: params.friendId } },{ new: true })
+    User.findOneAndUpdate({ _id: params.id }, { $push: { friends: params.friendId } }, { new: true })
       .populate({ path: 'friends', select: '-__v' })
       .select('-__v')
       .then(dbUsersData => {
         if (!dbUsersData) {
-          res.status(404).json({ message:  'Sorry no user found' });
+          res.status(404).json({ message: 'Sorry no user found' });
           return;
         }
         res.json(dbUsersData);
@@ -108,10 +108,10 @@ const userController = {
       .select('-__v')
       .then(dbUsersData => {
         if (!dbUsersData) {
-          res.status(404).json({ message:  'Sorry no user found' });
+          res.status(404).json({ message: 'Sorry no user found' });
           return;
         }
-        res.json(dbUsersData);
+        res.json(true);
       })
       .catch(err => res.status(400).json(err));
   },
