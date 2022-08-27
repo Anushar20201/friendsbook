@@ -84,6 +84,7 @@ const userController = {
 
   //Adding a new Friend
   addFriend({ params }, res) {
+    //push is update operator, if u want to avoid duplicates- then use addToSet operator in place of $push
     User.findOneAndUpdate({ _id: params.id },{ $push: { friends: params.friendId } },{ new: true })
       .populate({ path: 'friends', select: '-__v' })
       .select('-__v')

@@ -4,9 +4,9 @@ const dateFormat = require("../utils/dateFormat");
 
 const ReactionSchema = new Schema(
     {
+        // set custom id to avoid confusion with parent id
         reactionId: {
             //Using Mongoose's ObjectId data type, default value is set to a new ObjectId
-
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId(),
         },
@@ -21,7 +21,7 @@ const ReactionSchema = new Schema(
         username: {
             type: String,
             required: true
-           
+
         },
         createdAt: {
             type: Date,
@@ -42,7 +42,7 @@ const ThoughtSchema = new Schema(
         username: {
             type: String,
             required: true
-        
+
         },
         thoughtText: {
             type: String,
