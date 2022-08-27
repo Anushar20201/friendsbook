@@ -19,6 +19,7 @@ mongoose.connect(
 // Using this to log mongo queries being executed!
 mongoose.set('debug', true);
 
+//looks for index.js in thr routes folder
 app.use(require('./routes'));
 
 app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
