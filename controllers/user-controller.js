@@ -5,7 +5,9 @@ const userController = {
   // getting all users
   getAllUsers(req, res) {
     User.find({})
+    //We want to get the full document form of an objectID in a different document.
       .populate({
+        // The .populate() method should contain an object with the property of path, which refers to the field that should be populated.
         path: 'thoughts',
         select: '-__v'
       })
