@@ -10,6 +10,8 @@ const userController = {
         select: '-__v'
       })
       .select('-__v')
+      // Mongoose has a .sort() method to help with this. After the .select() method, use .sort({ _id: -1 }) to sort in DESC order by the _id value. This gets the newest pizza because a timestamp value is hidden somewhere inside the MongoDB ObjectId.
+      .sort({ _id: -1 })
       .then(dbUserData => res.json(dbUserData))
       .catch(err => {
         console.log(err);
@@ -99,6 +101,7 @@ const userController = {
       { $pull: { friends: params.friendId } },
       { new: true })
       .populate({ path: 'friends', select: '-__v' })
+      //Note that we also used the select option inside of populate(), so that we can tell Mongoose that we don't care about the __v field on comments either. The minus sign - in front of the field indicates that we don't want it to be returned. If we didn't have it, it would mean that it would return only the __v field.
       .select('-__v')
       .then(dbUsersData => {
         if (!dbUsersData) {
