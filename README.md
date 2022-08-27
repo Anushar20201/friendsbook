@@ -26,6 +26,7 @@ This can be accessible at : https://github.com/Anushar20201/friendsbook
 https://watch.screencastify.com/v/df0Wj6FllOFeDhkvCTDr 
 
 ### Screenshot
+[https://github.com/Anushar20201/friendsbook/blob/main/images/Capture.PNG]
 
 ### Designed with ❤️ by
 - Anusha
