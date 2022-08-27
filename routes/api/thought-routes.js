@@ -28,9 +28,9 @@ router
     .put(updateThought)
     .delete(deleteThought)
 
-//post route thr' /id/reactions
+//post route thr' /id/reaction
 router
-    .route('/:thoughtId/reactions')
+    .route('/:thoughtId/reaction')
     .post(addReaction)
 
 //delete route based on thoughtId and reactionId

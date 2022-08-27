@@ -56,7 +56,7 @@ const ThoughtSchema = new Schema(
             get: (value) => dateFormat(value),
         },
         //Array of nested documents created with the reactionSchema - These are like replies
-        reactions: [ReactionSchema],
+        reaction: [ReactionSchema]
     },
     {
         toJSON: {
@@ -68,7 +68,7 @@ const ThoughtSchema = new Schema(
 );
 
 ThoughtSchema.virtual("reactionCount").get(function () {
-    return this.reactions.length;
+    return this.reaction.length;
 });
 
 const Thought = model("Thought", ThoughtSchema);
