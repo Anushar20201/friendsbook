@@ -2,9 +2,12 @@
 
 ### Description
 
-AS A social media startup
-I WANT an API for my social network that uses a NoSQL database
-SO THAT my website can handle large amounts of unstructured data
+FRIENDSBOOK is a social network application that uses a NoSQL database - MongoDB
+SO THAT your website can handle large amounts of unstructured data. 
+Using this application, we can perform CRUD operations on a user and his thoughts. 
+In addition to this, we can tag friends to a user and also monitor reactions of thoughts.
+I have used use Express.js for routing, a MongoDB database, and the Mongoose ODM. In addition to using the Express.js (Links to an external site.) and Mongoose (Links to an external site.) packages, I have used a JavaScript date library  to format timestamps.
+
 
 ### Use cases
 
