@@ -18,10 +18,12 @@ const UserSchema = new Schema({
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/]
     },
     thoughts: [{
+     // telling Mongoose to expect an ObjectId and to tell it that its data comes from the Thought model
         type: Schema.Types.ObjectId,
         ref: 'Thought'
     }],
     friends: [{
+    // telling Mongoose to expect an ObjectId and to tell it that its data comes from the User (self-ref) model
         type: Schema.Types.ObjectId,
         ref: 'User'
     }]
